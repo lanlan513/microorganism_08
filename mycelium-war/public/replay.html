@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>对局回放 · 菌落抢地盘</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>🎞 对局回放</h1>
+    <span class="conn" id="replay-src"></span>
+  </header>
+  <div id="replay-page">
+    <div id="replay-canvas-wrap">
+      <canvas id="replay-canvas"></canvas>
+    </div>
+    <div id="replay-controls">
+      <div class="panel">
+        <div id="frame-label">加载中…</div>
+        <div class="row">
+          <button id="btn-first">⏮</button>
+          <button id="btn-prev">◀</button>
+          <button id="btn-play">▶ 播放</button>
+          <button id="btn-next">▶|</button>
+        </div>
+        <div class="row">
+          <input type="range" id="scrub" min="0" max="0" value="0">
+        </div>
+        <div class="row">
+          <label style="font-size:12px;color:#9db3ac">速度
+            <select id="speed">
+              <option value="1200">慢</option>
+              <option value="500" selected>正常</option>
+              <option value="150">快</option>
+              <option value="0">瞬时</option>
+            </select>
+          </label>
+        </div>
+        <div id="replay-result"></div>
+        <div id="replay-problems"></div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/replay-ui.js"></script>
+</body>
+</html>

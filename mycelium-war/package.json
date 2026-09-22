@@ -1,0 +1,17 @@
+{
+  "name": "mycelium-war",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "菌落抢地盘 —— 服务端权威裁决的双人菌丝对战",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "node test/integration.mjs",
+    "replay": "node tools/replay.js",
+    "bot": "node tools/bot.js",
+    "shoot": "node tools/shoot.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

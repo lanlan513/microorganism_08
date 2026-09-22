@@ -1,0 +1,73 @@
+{
+  "samples": [
+    {
+      "predictMs": 12.2,
+      "ackMs": 20.8,
+      "broadcastMs": 20.5,
+      "x": 2,
+      "y": 6
+    },
+    {
+      "predictMs": 12.2,
+      "ackMs": 20.8,
+      "broadcastMs": 20.5,
+      "x": 0,
+      "y": 6
+    },
+    {
+      "predictMs": 2.6,
+      "ackMs": 11,
+      "broadcastMs": 10.7,
+      "x": 0,
+      "y": 7
+    },
+    {
+      "predictMs": 5.4,
+      "ackMs": 13.8,
+      "broadcastMs": 13.5,
+      "x": 0,
+      "y": 5
+    },
+    {
+      "predictMs": 7.2,
+      "ackMs": 16.2,
+      "broadcastMs": 15.8,
+      "x": 1,
+      "y": 5
+    },
+    {
+      "predictMs": 7.9,
+      "ackMs": 16.8,
+      "broadcastMs": 16.3,
+      "x": 0,
+      "y": 4
+    },
+    {
+      "predictMs": 7,
+      "ackMs": 15.8,
+      "broadcastMs": 15.4,
+      "x": 1,
+      "y": 4
+    },
+    {
+      "predictMs": 6.3,
+      "ackMs": 15,
+      "broadcastMs": 14.8,
+      "x": 0,
+      "y": 3
+    }
+  ],
+  "predictMs": {
+    "avg": 7.6,
+    "max": 12.2
+  },
+  "ackMs": {
+    "avg": 16.3,
+    "max": 20.8
+  },
+  "broadcastMs": {
+    "avg": 15.9,
+    "max": 20.5
+  },
+  "note": "predictMs=点击到Canvas预测帧；ackMs=点击到服务端回执；broadcastMs=点击到权威广播"
+}

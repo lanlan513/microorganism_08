@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>菌落抢地盘</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>🧫 菌落抢地盘</h1>
+    <div class="conn">
+      <span id="seat-badge"></span>
+      <span id="conn-dot" class="dot off"></span><span id="conn-text">连接中…</span>
+      <span id="opp-dot" class="dot off"></span><span id="opp-status">对手未连接</span>
+    </div>
+  </header>
+
+  <!-- 大厅 -->
+  <div id="lobby">
+    <form id="create-form" class="panel">
+      <h2>新开一局</h2>
+      <label>棋盘边长
+        <select id="f-size">
+          <option value="12">12 × 12（快棋）</option>
+          <option value="16" selected>16 × 16（标准）</option>
+          <option value="20">20 × 20（持久）</option>
+        </select>
+      </label>
+      <label>每手思考时限
+        <select id="f-think">
+          <option value="10">10 秒</option>
+          <option value="20" selected>20 秒</option>
+          <option value="45">45 秒</option>
+        </select>
+      </label>
+      <label>模拟弱网延迟（演示用）
+        <select id="f-latency">
+          <option value="0" selected>无</option>
+          <option value="300">300ms</option>
+          <option value="900">900ms（预测纠错演示）</option>
+        </select>
+      </label>
+      <button type="submit">创建对局</button>
+      <div id="invite">
+        <p>把任意一个链接发给对手，自己开另一个（不同浏览器/设备均可）：</p>
+        <label>青菌（先手）<input id="link-p1" readonly onclick="this.select()"></label>
+        <label>赤菌（后手）<input id="link-p2" readonly onclick="this.select()"></label>
+        <p><a id="link-replay" href="#" target="_blank">→ 这盘棋的回放页</a></p>
+      </div>
+    </form>
+  </div>
+
+  <!-- 对局 -->
+  <div id="game" style="display:none">
+    <div id="board-wrap">
+      <canvas id="board"></canvas>
+    </div>
+    <aside id="hud">
+      <div class="panel">
+        <div id="turn-text">…</div>
+        <div id="clock">⏱ —</div>
+        <div id="score"></div>
+        <a id="replay-link" href="#" target="_blank" style="display:none">查看本局回放 →</a>
+      </div>
+      <div class="panel help">
+        <b>玩法</b><br>
+        · 轮到你时，点<b>空格</b>：从自家菌落边缘长出菌丝<br>
+        · 点<b>自家菌落</b>：分泌抗菌素，压制周围空格 6 手<br>
+        · 吃到<b>金色营养点</b>：获得连击<br>
+        · 占满培养皿比地盘，或把对方围到无路可走即胜
+      </div>
+      <div id="metrics" class="panel" style="display:none"></div>
+      <div id="event-log" class="panel"></div>
+    </aside>
+  </div>
+
+  <div id="toasts"></div>
+  <script type="module" src="/client.js"></script>
+</body>
+</html>
